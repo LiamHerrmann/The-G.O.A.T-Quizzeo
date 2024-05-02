@@ -9,10 +9,9 @@ async function createUtilisateur(req, res) {
     const mail = req.body.mail;
     const role = req.body.role;
 
-    const name = await db.query('CALL addUtilisateur(?,?,?,?,?);', [id,nom, mdp, mail, role]);
-    let result = await db.query('CALL getUtilisateur(?,?);', [Number(name[0][0].element) - 1, 1]);
+    await db.query('CALL addUtilisateur(?,?,?,?,?);', [id,nom, mdp, mail, role]);
 
-    res.status(201).json(result[0]);
+    res.status(201).json('utilisateur créé');
     
 }
 
@@ -43,7 +42,7 @@ async function updateUtilisateur(req, res) {
     await db.query('CALL updateUtilisateur(?,?,?,?,?);', [id, nom, mdp, mail, role]);
     let result = await db.query('CALL getUtilisateur(?,?);', [Number(id) - 1, 1]);
 
-    res.status(200).json(result[0]);
+    res.status(200).json('mise à jour effectuée');
 }
 
 //Delete

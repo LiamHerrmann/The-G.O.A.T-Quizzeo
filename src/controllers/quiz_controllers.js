@@ -10,10 +10,9 @@ async function createQuiz(req, res) {
     const statut = req.body.statut;
     const utilisateur = req.body.utilisateur;
 
-    const name = await db.query('CALL addQuiz(?,?,?,?,?,?);', [id,titre, dc, createur, statut,utilisateur]);
-    let result = await db.query('CALL getQuiz(?,?);', [Number(name[0][0].element) - 1, 1]);
+    await db.query('CALL addQuiz(?,?,?,?,?,?);', [id,titre, dc, createur, statut,utilisateur]);
 
-    res.status(201).json(result[0]);
+    res.status(201).json('Quiz crée');
 }
 
 //Update
@@ -27,9 +26,8 @@ async function updateQuiz(req, res) {
     const utilisateur = req.body.utilisateur;
 
     await db.query('CALL updateQuiz(?,?,?,?,?,?);', [id, titre, dc, createur, statut,utilisateur]);
-    let result = await db.query('CALL getQuiz(?,?);', [Number(id) - 1, 1]);
 
-    res.status(200).json(result[0]);
+    res.status(200).json('Mise à jour');
 }
 
 //Delete
