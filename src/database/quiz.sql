@@ -22,7 +22,7 @@ DELIMITER ;
 
 DELIMITER $$
 
-CREATE OR REPLACE PROCEDURE getUtilisateurs (
+CREATE OR REPLACE PROCEDURE getUtilisateur (
     IN val_nom varchar(50),
     IN val_role varchar(50)
 )
@@ -44,7 +44,7 @@ CREATE OR REPLACE PROCEDURE updateUtilisateur (
     IN val_role varchar(50)
 )
 BEGIN
-    UPDATE utilisateur
+    UPDATE utilisateur 
     SET nom = val_nom, mdp = val_mdp, mail = val_mail, role = val_role
     WHERE id = val_id;
 END$$
@@ -69,7 +69,7 @@ DELIMITER ;
 
 DELIMITER $$
 
-CREATE OR REPLACE PROCEDURE addUQuiz (
+CREATE OR REPLACE PROCEDURE addQuiz (
     IN val_titre varchar(100),
     IN val_dc date,
     IN val_createur int(11),
@@ -77,7 +77,7 @@ CREATE OR REPLACE PROCEDURE addUQuiz (
     IN val_utilisateur int(11)
 )
 BEGIN
-    INSERT INTO Quiz (titre, dc, createur, statut, utilisateur) VALUES
+    INSERT INTO quiz (titre, dc, createur, statut, utilisateur) VALUES
      (val_titre, val_dc, val_createur, val_statut, val_utilisateur);
      SELECT LAST_INSERT_titre() AS element;
 END$$
@@ -88,7 +88,7 @@ DELIMITER ;
 
 DELIMITER $$
 
-CREATE OR REPLACE PROCEDURE updateUQuiz (
+CREATE OR REPLACE PROCEDURE updateQuiz (
     IN val_id INT,
     IN val_titre varchar(100),
     IN val_dc date,
@@ -98,7 +98,7 @@ CREATE OR REPLACE PROCEDURE updateUQuiz (
 
 )
 BEGIN
-    UPDATE Quiz
+    UPDATE quiz 
     SET titre = val_titre, dc = val_dc, createur = val_createur, statut = val_statut, utilisateur = val_utilisateur
     WHERE id = val_id;
 END$$
@@ -107,7 +107,7 @@ DELIMITER ;
 
 -- suppression
 
-CREATE OR REPLACE PROCEDURE deleteUQuiz (
+CREATE OR REPLACE PROCEDURE deleteQuiz (
     IN val_id INT
 )
 BEGIN
