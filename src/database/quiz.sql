@@ -11,7 +11,7 @@ CREATE OR REPLACE PROCEDURE addUtilisateur (
     IN val_role varchar(50)
 )
 BEGIN
-    INSERT INTO Utilisateurs (nom, mdp, mail, role) VALUES
+    INSERT INTO utilisateur (nom, mdp, mail, role) VALUES
      (val_nom, val_mdp, val_mail, val_role);
      SELECT LAST_INSERT_nom() AS element;
 END$$
@@ -27,7 +27,7 @@ CREATE OR REPLACE PROCEDURE getUtilisateurs (
     IN val_role varchar(50)
 )
 BEGIN
-    SELECT * FROM Utilisateurss LIMIT val_nom, val_role;
+    SELECT * FROM utilisateur LIMIT val_nom, val_role;
 END$$
 
 DELIMITER ;
@@ -44,7 +44,7 @@ CREATE OR REPLACE PROCEDURE updateUtilisateur (
     IN val_role varchar(50)
 )
 BEGIN
-    UPDATE Utilisateurs 
+    UPDATE utilisateur
     SET nom = val_nom, mdp = val_mdp, mail = val_mail, role = val_role
     WHERE id = val_id;
 END$$
@@ -57,7 +57,7 @@ CREATE OR REPLACE PROCEDURE deleteUtilisateur (
     IN val_id INT
 )
 BEGIN
-    DELETE FROM Utilisateurs WHERE id = val_id;
+    DELETE FROM utilisateur WHERE id = val_id;
 END$$
 
 DELIMITER ;
@@ -77,7 +77,7 @@ CREATE OR REPLACE PROCEDURE addUQuiz (
     IN val_utilisateur int(11)
 )
 BEGIN
-    INSERT INTO UQuizs (titre, dc, createur, statut, utilisateur) VALUES
+    INSERT INTO Quiz (titre, dc, createur, statut, utilisateur) VALUES
      (val_titre, val_dc, val_createur, val_statut, val_utilisateur);
      SELECT LAST_INSERT_titre() AS element;
 END$$
@@ -98,7 +98,7 @@ CREATE OR REPLACE PROCEDURE updateUQuiz (
 
 )
 BEGIN
-    UPDATE UQuizs 
+    UPDATE Quiz
     SET titre = val_titre, dc = val_dc, createur = val_createur, statut = val_statut, utilisateur = val_utilisateur
     WHERE id = val_id;
 END$$
@@ -111,7 +111,7 @@ CREATE OR REPLACE PROCEDURE deleteUQuiz (
     IN val_id INT
 )
 BEGIN
-    DELETE FROM UQuizs WHERE id = val_id;
+    DELETE FROM Quiz WHERE id = val_id;
 END$$
 
 DELIMITER ;
