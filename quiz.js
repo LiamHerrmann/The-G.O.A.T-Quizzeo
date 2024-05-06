@@ -6,7 +6,7 @@ function addOption() {
     const input = document.createElement('input');
     input.type = 'text';
     input.name = 'option' + (form.getElementsByTagName('input').length - 2); // Increment option name
-    input.placeholder = 'Option ' + (form.getElementsByTagName('input').length - 1); // Increment option placeholder
+    input.placeholder = 'Option ' + (form.getElementsByTagName('input').length +0); // Increment option placeholder
     form.insertBefore(input, document.getElementById('addOption'));
 }
 
