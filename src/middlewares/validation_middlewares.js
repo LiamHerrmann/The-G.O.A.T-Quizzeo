@@ -14,6 +14,26 @@ function handleErrors(req, res, next) {
 //Contrôle les champs concernant certaines actions.
 //Les actions concernées se déduisent du nom des constantes ci-dessous.
 
+const createQuiz = [
+    body('id').isInt().notEmpty(),
+    body('titre').isString().isLength({ min: 1, max: 64 }).notEmpty(),
+    body('dc').isString().isLength({ min: 1, max: 64 }).notEmpty(),
+    body('createur').isString().isLength({ min: 1, max: 64 }).notEmpty(),
+    body('statut').isString().isLength({ min: 1, max: 64 }).notEmpty(),
+    body('utilisateur').isString().isLength({ min: 1, max: 64 }).notEmpty(),
+    handleErrors
+];
+
+const updateQuiz = [
+    body('id').isInt().notEmpty(),
+    body('titre').isString().isLength({ min: 1, max: 64 }).notEmpty(),
+    body('dc').isString().isLength({ min: 1, max: 64 }).notEmpty(),
+    body('createur').isString().isLength({ min: 1, max: 64 }).notEmpty(),
+    body('statut').isString().isLength({ min: 1, max: 64 }).notEmpty(),
+    body('utilisateur').isString().isLength({ min: 1, max: 64 }).notEmpty(),
+    handleErrors
+];
+
 const updateUtilisateur = [
     body('id').isInt().notEmpty(),
     body('nom').isString().isLength({ min: 1, max: 64 }).notEmpty(),
@@ -49,5 +69,7 @@ module.exports = {
     authenticate,
     updateUtilisateur,
     createUtilisateur,
-    readUtilisateur
+    readUtilisateur,
+    createQuiz,
+    updateQuiz
 };

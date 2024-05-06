@@ -13,3 +13,5 @@ router.post('/create', validation.createQuiz, controller.createQuiz);
 router.put('/update', validation.updateQuiz, controller.updateQuiz);
 //Delete
 router.delete('/delete/:id', controller.deleteQuiz);
+
+module.exports = router;
