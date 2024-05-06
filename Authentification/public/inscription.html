@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/52c7063493.js" crossorigin="anonymous"></script>
+
+    <script type="text/javascript"  src="js/inscription.js" ></script>
+
+    <title>Quizzeo - Inscription</title>
+</head>
+<body>
+    <header>
+        <div class="header">
+            <img src="images/logo.png">
+            <a href="page_accueil.html" class="logo"></a>
+            
+            <div class="header-right">
+                <a class="active" href="page_accueil.html"#accueil>Accueil</a>
+                <a href="creation_quiz.html"#creation>Créer un Quiz</a>
+                <a href="creation_sondage.html"#creation>Créer un Sondage</a>
+                <a href="statistiques.html"#statistiques>Statistiques</a>
+            </div>
+        </div>
+    </header>
+    <main>
+
+        <section id="register">
+            <h2>Inscription</h2>
+            <!-- <form action="/register" method="post"> -->
+            <form id="registerForm">
+                <input type="text" id="name" class="form-control" placeholder="Nom complet" required>
+                <input type="email" id="email" class="form-control" placeholder="Adresse e-mail" required>
+                <input type="password" id="password" class="form-control" placeholder="Mot de passe" required>
+
+                <div id="captchaContainer"></div>
+                <div>
+                    <label for="captchaInput">Entrer le texte du captcha:</label>
+                    <input type="text" id="captchaInput" name="captchaInput" required>
+                </div>
+                <button type="button" onclick="validateCaptcha()">S'inscrire</button>
+
+            </form>
+    
+           <p>
+                <div id="errorMessage" style="display: none;"></div>        
+            </p>
+           
+       
+            <script> getCaptcha(); </script>
+
+            <p>Déjà un compte ? <a href="connexion.html"#login>Connectez-vous ici</a>.</p>
+        </section>
+
+
+
+    </main>
+    <footer>
+        <h2>Retrouvez-nous sur ...</h2>
+            <ul>
+                <li><a href=""><i class="fab fa-facebook-f"></i></a></li>
+                <li><a href=""><i class="fab fa-twitter"></i></a></li>
+                <li><a href=""><i class="fab fa-instagram"></i></a></li>
+                <li><a href=""><i class="fab fa-linkedin-in"></i></a></li>
+                <li><a href=""><i class="fab fa-youtube"></i></a></li>
+            </ul>   
+        <p>© 2024 Quizzeo. Tous droits réservés.</p>
+    </footer>
+</body>
+</html>

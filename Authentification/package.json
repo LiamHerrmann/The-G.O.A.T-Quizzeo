@@ -1,0 +1,23 @@
+{
+    "name": "quizzeo",
+    "version": "0.1.1",
+    "description": "Quizzzzz",
+    "main": "app.js",
+    "scripts": {
+        "test": "echo \"Error: pas de tests\" && exit 1"
+    },
+    "author": "quizzeo team",
+    "license": "QuizzL",
+    "dependencies": {
+        "cors": "^2.8.5",
+        "dotenv": "^16.4.5",
+        "execsql": "^0.0.3",
+        "express": "^4.19.2",
+        "express-validator": "^7.0.1",
+        "jsonwebtoken": "^9.0.2",
+        "mariadb": "^3.3.0",
+        "minimist": "^1.2.8",
+        "optimist": "^0.6.1",
+        "svg-captcha": "^1.4.0"
+    }
+}
