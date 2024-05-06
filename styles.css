@@ -1,0 +1,345 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;1,500&display=swap');
+
+header {
+    background-color: grey;
+   
+}      
+
+h1 {
+    color: wheat;
+}
+
+.header {
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+}
+
+
+a {
+    color: wheat;
+}
+
+.header .logo img {
+    width: 85px;
+    padding: 20px;
+}
+
+.header-right::before, .header-right::after {
+    height: 1px;
+    width: 100%;
+    background-color: rgba(145, 125, 8, 0.889);
+    margin: 3px;
+    content: '';
+}
+
+.header-right {
+    width: 50%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header-right a {
+    padding: 0px 15px;
+    color: gold;
+    text-decoration: none;
+    transition: linear 0.2s;
+    white-space: nowrap;
+}
+
+.header-right a:hover {
+    color: goldenrod;
+}
+
+body {
+    margin: 0px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Rubik', sans-serif;
+    width: 100vw;
+    overflow-x: hidden;
+    background:-webkit-linear-gradient(top, grey 30%, rgba(255, 217, 0, 0.475) 70%);   
+    }
+
+
+button {
+    margin: auto;
+    display: block;
+    background-color: #04AA6D;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button.btn_deconnect {
+    margin: 0px auto 20px auto;
+    background-color: rgb(255, 96, 96);
+}
+
+section {
+    padding:30px;
+}
+
+
+section:nth-child(even).degrade-horizontal {
+        background: linear-gradient(to right, goldenrod, gold);
+      }
+      
+
+#accueil #whoami {
+    text-align: center;
+    max-width: 70%;
+    margin:auto;
+}
+
+#accueil h2 {
+    font-size:18px;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+#accueil > div {
+    display:flex;
+    justify-content: center;
+    align-items: start;
+    flex-wrap: wrap;
+    margin:auto;
+    max-width: 80%;
+}
+
+#accueil > div > div {
+    width: 50%;
+}
+
+#accueil > div > div:first-child span:first-child, #contact p span:first-child {
+    font-weight: bold;
+    font-style: normal;
+}
+
+#statistiques div {
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+#statistiques p {
+    inline-size: fit-content;
+}
+
+.item-index {
+    display:flex;
+    justify-content: start;
+    align-items: center;
+    max-width: 90vw;
+    flex-wrap: wrap;
+    margin: auto;
+}
+
+.item-index > div {
+    width: 300px;
+    flex: 0 0 25%;
+    margin: 20px 0;
+}
+
+.item-index a {
+    text-decoration: none;
+}
+
+.img-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    width: 300px;
+    height: 300px;
+    overflow: hidden;
+    margin: auto;
+}
+
+.img-item p {
+    font-size: 35px;
+    font-weight: bold;
+    position: relative;
+    margin: 0px;
+    bottom: 55px;
+    height: 0px;
+    color: black;
+    text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+}
+
+.img-item img {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    transition: linear 0.2s;
+}
+
+.img-item:hover img {
+    -ms-transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+main h1 {
+    text-align: center;
+    margin: 50px;
+    font-size: 40px;
+}
+
+#features img {
+    width: 5px;
+    padding: 20px;
+}
+
+#menu {
+    margin: 50px auto;
+    min-width: 50%;
+    border-collapse: collapse
+}
+
+#menu td, #menu th {
+    border-bottom: 2px solid;
+    padding: 1em;
+    margin: -1em -1em;
+}
+
+#menu tr td:last-child {
+    border-left: 2px solid;
+}
+
+footer p {
+    max-width: 50%;
+}
+
+footer ul {
+    display: flex;
+    margin: 30px;
+    list-style-type: none;
+}
+
+footer ul li {
+    margin: 5px;
+    border-radius: 50%;
+    border: 2px white solid;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: linear 0.5s;
+}
+
+footer ul li:hover{
+    background-color: white;
+}
+
+footer ul li a {
+    color: goldenrod;
+    text-decoration: none;
+    padding: 0px;
+    font-size: 20px;
+    transition: linear 0.5s;
+}
+
+footer ul li:hover a{
+    color: grey;
+    transform: rotate3d(0, 1, 0, 180deg);
+}
+
+footer p {
+    text-align: center;
+}
+
+footer {
+    margin-top: auto;
+    background-color: grey;
+    color: wheat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal {
+    position:fixed;
+    width:100%;
+    height:100%;
+    top:0px;
+    left:0px;
+    z-index:1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s linear;
+}
+
+.modal > div:last-child {
+    background: white;
+    border-radius: 10px;
+    padding: 50px;
+}
+
+.modal > div:last-child > div {
+    margin: 20px 0px;
+}
+
+.modal p {
+    text-align: end;
+    font-size: 30px;
+    position: relative;
+    top: -30px;
+    right: -30px;
+    margin: 0;
+}
+
+.modal p i {
+    cursor: pointer;
+}
+
+.modal h1 {
+    margin: 0 0 50px 0px;
+    text-align: center;
+}
+
+#opacity {
+    opacity:0.8;
+    background-color:black;
+    width:100%;
+    height:100%;
+    z-index: -1;
+    position: fixed;
+}
+
+@media (max-width: 1500px) {
+
+    .item-index > div {
+        flex: 0 0 33%;
+    }
+}
+
+@media (max-width: 1100px) {
+
+    .item-index > div {
+        flex: 0 0 50%;
+    }
+}
+
+@media (max-width: 700px) {
+
+    .item-index > div {
+        flex: 0 0 100%;
+    }
+
+    #accueil > div > div {
+        width: 100%;
+    }
+    
+}
